@@ -1,0 +1,3 @@
+func (v *receiverValidator) {{.MethodName}}({{.ParametersAndTypes}}) (json.RawMessage, error) {
+	return v.receiver.{{.MethodName}}({{.Parameters}})
+}

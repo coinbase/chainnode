@@ -1,0 +1,12 @@
+#Test Comment
+#Template Format: ApiName(Parameter, Parameter Type) (json.RawMessage, error) //Timeout
+
+@Eth
+Boo(ctx context.Context, param1 type1{}, param2 type2{}) (json.RawMessage, error) // 30
+
+
+@Net
+Loo(ctx context.Context, param1 type1{}) (json.RawMessage, error) // 2
+
+@Web3
+Too(ctx context.Context, param1 type1{}, param2 type2{}, param3 type3{}) (json.RawMessage, error) //2

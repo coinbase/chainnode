@@ -1,0 +1,3 @@
+func (n {{.Namespace}}) {{.MethodName}}({{.ParametersAndTypes}}) (json.RawMessage, error) {
+	return n.receiver.{{.MethodName}}({{.Parameters}})
+}

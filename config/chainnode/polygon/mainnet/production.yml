@@ -1,0 +1,9 @@
+aws:
+  aws_account: production
+  dynamodb:
+    collection_table: chainnode-collection-polygon-mainnet
+tag:
+  latest: 2
+  stable: 2
+storage:
+  trace_upload_enforced: false

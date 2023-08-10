@@ -1,0 +1,10 @@
+controller:
+  handler:
+    shadow_percentage: 100
+workflows:
+  coordinator:
+    checkpoint_interval: 5m
+  ingestor:
+    batch_size: 10
+    mini_batch_size: 5
+    parallelism: 2

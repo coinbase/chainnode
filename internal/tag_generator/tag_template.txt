@@ -1,0 +1,32 @@
+#Template Format: ApiName(Parameter, Parameter Type) (json.RawMessage, error) //Timeout
+
+@Eth
+Call(ctx context.Context, callObject interface{}, blockNumber interface{}) (json.RawMessage, error) //30
+GetBalance(ctx context.Context, address interface{}, blockNrOrHash interface{}) (json.RawMessage, error)
+GetCode(ctx context.Context, address interface{}, blockNrOrHash interface{}) (json.RawMessage, error)
+GetTransactionCount(ctx context.Context, address interface{}, blockNrOrHash interface{}) (json.RawMessage, error)
+SendRawTransaction(ctx context.Context, encodedTx interface{}) (json.RawMessage, error)
+GasPrice(ctx context.Context) (json.RawMessage, error)
+GetStorageAt(ctx context.Context, address interface{}, key interface{}, blockNrOrHash interface{}) (json.RawMessage, error)
+EstimateGas(ctx context.Context, args interface{}, blockNrOrHash *interface{}) (json.RawMessage, error)
+ProtocolVersion(ctx context.Context) (json.RawMessage, error) //2
+FeeHistory(ctx context.Context, blockCount interface{}, lastBlock interface{}, rewardPercentiles interface{}) (json.RawMessage, error) //2
+Mining(ctx context.Context) (json.RawMessage, error)
+Hashrate(ctx context.Context) (json.RawMessage, error)
+Accounts(ctx context.Context) (json.RawMessage, error)
+NewFilter(ctx context.Context, criteria interface{}) (json.RawMessage, error)
+NewBlockFilter(ctx context.Context) (json.RawMessage, error)
+UninstallFilter(ctx context.Context, id interface{}) (json.RawMessage, error)
+GetFilterChanges(ctx context.Context, id interface{}) (json.RawMessage, error)
+GetFilterLogs(ctx context.Context, id interface{}) (json.RawMessage, error)
+GetWork(ctx context.Context) (json.RawMessage, error)
+SubmitWork(ctx context.Context, nonce interface{}, hash interface{}, digest interface{}) (json.RawMessage, error)
+SubmitHashrate(ctx context.Context, rate interface{}, id interface{}) (json.RawMessage, error)
+MaxPriorityFeePerGas(ctx context.Context) (json.RawMessage, error)
+GetProof(ctx context.Context, address interface{}, storageKeys interface{}, blockNrOrHash interface{}) (json.RawMessage, error)
+
+@Net
+PeerCount(ctx context.Context) (json.RawMessage, error) //2
+
+@Web3
+ClientVersion(ctx context.Context) (json.RawMessage, error) //2

@@ -1,0 +1,5 @@
+aws:
+  aws_account: production
+workflows:
+  coordinator:
+    event_tag: 0

@@ -1,0 +1,10 @@
+func (i *instrumentInterceptor) {{.MethodName}}({{.ParametersAndTypes}}) (json.RawMessage, error) {
+	return i.intercept(
+		ctx,
+		i.proxyMetrics.instrument{{.MethodName}},
+		func(ctx context.Context) (json.RawMessage, error) {
+			return i.next.{{.MethodName}}({{.AllParameters}})
+		},
+		{{.Parameters}},
+	)
+}

@@ -1,0 +1,5 @@
+func (i *errorInterceptor) {{.MethodName}}({{.ParametersAndTypes}}) (json.RawMessage, error) {
+	return i.intercept(ctx, func(ctx context.Context) (json.RawMessage, error) {
+    		return i.next.{{.MethodName}}({{.Parameters}})
+    })
+}

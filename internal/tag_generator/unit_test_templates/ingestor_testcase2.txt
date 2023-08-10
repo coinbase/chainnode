@@ -1,0 +1,13 @@
+#Test Comment
+# Test Comment
+#Template Format: ApiName(Parameter, Parameter Type) (json.RawMessage, error) //Timeout
+
+Foo(ctx context.Context) (json.RawMessage, error) //30
+ProtocolVersion(ctx context.Context) (json.RawMessage, error) //2
+FeeHistory(ctx context.Context, blockCount interface{}, lastBlock interface{}, rewardPercentiles interface{}) (json.RawMessage, error) //2
+
+@Net
+PeerCount(ctx context.Context) (json.RawMessage, error) //2
+
+@Web3
+ClientVersion(ctx context.Context) (json.RawMessage, error) //2

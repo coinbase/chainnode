@@ -1,0 +1,9 @@
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "debug_traceBlockByHash",
+  "params":  [
+    "0x6f6db02f560821eab1e1a978eadcec4feb016aa647758b2a27dced41eadfc6eb",
+    {"tracer": "callTracer"}
+  ]
+}

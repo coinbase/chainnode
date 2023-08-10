@@ -1,0 +1,79 @@
+aws:
+  aws_account: development
+  region: us-east-1
+cadence:
+  address: ""
+  retention_period: 7
+chain:
+  blockchain: BLOCKCHAIN_ETHEREUM
+  client:
+    primary: ''
+    validator: ''
+  irreversible_distance: 100
+  network: NETWORK_ETHEREUM_GOERLI
+config_name: ethereum-goerli
+controller:
+  handler:
+    shadow_percentage: 2
+sla:
+  tier: 2
+  block_height_delta: 20
+  block_time_delta: 5m
+  time_since_last_block: 5m
+  validator_block_height_delta: 25
+tag:
+  latest: 1
+  stable: 1
+task_pool:
+  size: 30
+storage:
+  global_checkpoint:
+    number_of_shards: 10
+workflows:
+  coordinator:
+    activity_retry_maximum_attempts: 5
+    activity_start_to_close_timeout: 2m
+    checkpoint_interval: 1h
+    event_tag: 0
+    ingestors:
+    - collection: blocks
+      synchronized: true
+    - collection: logs-v2
+      synchronized: true
+    - collection: traces-by-hash
+      synchronized: true
+    - collection: traces-by-number
+      synchronized: true
+    - collection: blocks-by-hash
+      synchronized: true
+    - collection: transactions
+      mini_batch_parallelism: 5
+      mini_batch_size: 5
+      synchronized: true
+    - collection: transaction-receipts
+      mini_batch_parallelism: 5
+      mini_batch_size: 5
+      synchronized: true
+    interrupt_timeout: 30s
+    synchronizer_interval: 1s
+    task_list: default
+    workflow_execution_timeout: 3h
+    workflow_identity: workflow.coordinator
+  ingestor:
+    activity_retry_maximum_attempts: 5
+    activity_start_to_close_timeout: 2m
+    backoff: 1s
+    batch_size: 5000
+    checkpoint_size: 5
+    checkpoint_size_at_tip: 300
+    mini_batch_size: 20
+    parallelism: 200
+    task_list: default
+    workflow_execution_timeout: 3h
+    workflow_identity: workflow.ingestor
+  workers:
+  - task_list: default
+batch_limit:
+  default_limit: 1000
+server:
+  bind_address: :8000

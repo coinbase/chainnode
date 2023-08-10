@@ -1,0 +1,7 @@
+#Unit Test Template
+
+@Eth
+Foo(ctx context.Context) (json.RawMessage, error) //2
+
+@Web3
+Boo(ctx context.Context, paramOne typeOne,paramTwo typeTwo) (json.RawMessage, error)

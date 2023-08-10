@@ -1,0 +1,22 @@
+import (
+	"context"
+	"encoding/json"
+
+	"github.com/uber-go/tally/v4"
+	"go.uber.org/zap"
+
+	"github.com/coinbase/chainnode/internal/clients/blockchain/jsonrpc"
+	"github.com/coinbase/chainnode/internal/utils/instrument"
+)
+type (
+    proxyMetrics struct {
+        {{.ProxyMetrics}}
+    }
+)
+func newProxyMetrics(scope tally.Scope, logger *zap.Logger) *proxyMetrics {
+    scope = scope.SubScope(handlerScopeName)
+    return &proxyMetrics{
+        {{.NewProxyMetrics}}
+    }
+}
+{{.InstrumentInterceptors}}

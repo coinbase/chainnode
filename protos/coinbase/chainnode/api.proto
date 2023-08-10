@@ -1,0 +1,5 @@
+syntax = "proto3";
+
+package coinbase.chainnode;
+
+option go_package = "github.com/coinbase/chainnode/protos/coinbase/chainnode";

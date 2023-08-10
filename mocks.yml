@@ -1,0 +1,38 @@
+gomocks:
+- interfaces:
+  - Client
+  - HTTPClient
+  package: internal/clients/blockchain/jsonrpc
+- interfaces:
+  - Client
+  - Parser
+  package: internal/clients/chainstorage
+- interfaces:
+  - Checkpointer
+  - Controller
+  - Indexer
+  - Handler
+  - ReverseProxy
+  package: internal/controller
+- interfaces:
+  - Receiver
+  package: internal/controller/ethereum/handler
+- interfaces:
+  - CheckpointStorage
+  - EthereumStorage
+  package: internal/storage
+- interfaces:
+  - CollectionStorage
+  - DynamoAPI
+  package: internal/storage/collection
+- interfaces:
+  - Downloader
+  - Uploader
+  - Client
+  package: internal/storage/s3
+- interfaces:
+  - RPCServer
+  package: internal/server
+- interfaces:
+  - BlobStorage
+  package: internal/storage/blob

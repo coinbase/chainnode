@@ -1,0 +1,3 @@
+controller:
+  handler:
+    shadow_percentage: 100

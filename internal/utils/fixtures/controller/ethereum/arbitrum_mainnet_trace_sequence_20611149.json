@@ -1,0 +1,67 @@
+[
+  {
+    "result": {
+      "beforeEVMTransfers": [],
+      "afterEVMTransfers": [],
+      "type": "CALL",
+      "from": "0x00000000000000000000000000000000000a4b05",
+      "to": "0x00000000000000000000000000000000000a4b05",
+      "value": "0x0",
+      "gas": "0x0",
+      "gasUsed": "0xa988",
+      "input": "0x6bf6a42d00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000f2bd5200000000000000000000000000000000000000000000000000000000021f620d0000000000000000000000000000000000000000000000000000000000000001",
+      "output": "0x"
+    }
+  },
+  {
+    "result": {
+      "beforeEVMTransfers": [
+        {
+          "purpose": "feePayment",
+          "from": "0x1A8ed0D3Ad42c9019CC141aAce7e5Fb6E576B917",
+          "to": null,
+          "value": "0xaccdd281e000"
+        }
+      ],
+      "afterEVMTransfers": [
+        {
+          "purpose": "gasRefund",
+          "from": null,
+          "to": "0x1A8ed0D3Ad42c9019CC141aAce7e5Fb6E576B917",
+          "value": "0x96d366628b00"
+        },
+        {
+          "purpose": "feeCollection",
+          "from": null,
+          "to": "0xD345e41aE2cb00311956aA7109fC801Ae8c81a52",
+          "value": "0x73a1877c500"
+        },
+        {
+          "purpose": "feeCollection",
+          "from": null,
+          "to": "0xa4B00000000000000000000000000000000000F6",
+          "value": "0xec053a79000"
+        }
+      ],
+      "type": "CALL",
+      "from": "0x1a8ed0d3ad42c9019cc141aace7e5fb6e576b917",
+      "to": "0xa0cc33dd6f4819d473226257792afe230ec3c67f",
+      "value": "0x0",
+      "gas": "0x1a2cf0",
+      "gasUsed": "0xdf05",
+      "input": "0x46f83b50000000000000000000000000000000000000000000000000000000000000006f798848fbcfaa2778e9c4506e5f5c0629b371c13aa892566dd80704058da658880000000000000000000000000000000000000000000000000000000000000014772dd2ba992bd4b3e1eb26483b0bbe59378e41b1dbb82002383256e9fcf7811c",
+      "output": "0x",
+      "calls": [
+        {
+          "type": "DELEGATECALL",
+          "from": "0xa0cc33dd6f4819d473226257792afe230ec3c67f",
+          "to": "0xd52c8cbef4ec47d88c2004f90dbc1da1a6a61378",
+          "gas": "0x19b0bd",
+          "gasUsed": "0xcb10",
+          "input": "0x46f83b50000000000000000000000000000000000000000000000000000000000000006f798848fbcfaa2778e9c4506e5f5c0629b371c13aa892566dd80704058da658880000000000000000000000000000000000000000000000000000000000000014772dd2ba992bd4b3e1eb26483b0bbe59378e41b1dbb82002383256e9fcf7811c",
+          "output": "0x"
+        }
+      ]
+    }
+  }
+]

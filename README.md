@@ -246,6 +246,8 @@ aws dynamodb --no-sign-request --region local --endpoint-url http://localhost:45
 [JSON-RPC API Methods](https://ethereum.org/en/developers/docs/apis/json-rpc/#json-rpc-methods)
 
 ### Eth namespace
+Caveat: ChainNode only supports the following block tags: `latest`, `earliest`, and block number in hex format.
+
 ```shell
 # eth_blockNumber: https://eth.wiki/json-rpc/API#eth_blocknumber
 curl -s localhost:8000/v1 -H "Content-Type: application/json" -d '{"jsonrpc": "2.0", "id": 1, "method": "eth_blockNumber"}' | jq
@@ -278,6 +280,7 @@ curl -s localhost:8000/v1 -H "Content-Type: application/json" -d '{"jsonrpc": "2
 curl -s localhost:8000/v1 -H "Content-Type: application/json" -d '{"jsonrpc": "2.0", "id": 1, "method": "eth_getTransactionByBlockNumberAndIndex", "params": ["0xdad3c1", "0x0"]}' | jq
 
 # eth_getLogs: https://eth.wiki/json-rpc/API#eth_getlogs
+# CAVEAT: eth_getLogs has a max block range limit of 1000 blocks.
 curl -s localhost:8000/v1 -H "Content-Type: application/json" -d '{"jsonrpc": "2.0", "id": 1, "method": "eth_getLogs", "params": [{"fromBlock": "0xdad3c1", "toBlock": "0xdad3c2"}]}' | jq
 
 # eth_call: https://eth.wiki/json-rpc/API#eth_call
@@ -351,6 +354,8 @@ curl -s localhost:8000/v1 -H "Content-Type: application/json" -d '{"jsonrpc": "2
 ```
 
 ### Debug namespace
+Caveat: ChainNode only supports the following tracer types: `callTracer`.
+
 ```bash
 # debug_traceBlockByHash: https://geth.ethereum.org/docs/rpc/ns-debug#debug_traceblockbyhash
 curl -s localhost:8000/v1 -H "Content-Type: application/json" -d '{"jsonrpc": "2.0", "id": 1, "method": "debug_traceBlockByHash", "params": ["0xe075488f2716495e97c43f6eb2994964074a70245cca5844b308479ccbbb9ae7", {"tracer": "callTracer"}]}' | jq
